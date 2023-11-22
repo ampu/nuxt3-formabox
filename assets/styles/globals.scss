@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+#__nuxt {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  box-sizing: border-box;
+  font: 400 14px/20px "GraphikLCG", "Arial", sans-serif;
+
+  background-color: $white;
+  color: $black;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
