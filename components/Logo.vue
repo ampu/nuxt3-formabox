@@ -1,5 +1,5 @@
 <template lang="pug">
-LogoIcon
+LogoIcon.logo
 </template>
 
 <script lang="ts" setup>

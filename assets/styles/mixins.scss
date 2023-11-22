@@ -44,6 +44,12 @@
   }
 }
 
+@mixin notebook-tablet {
+  @media screen and (min-width: $width--tablet) and (max-width: $width--desktop - 1px) {
+    @content;
+  }
+}
+
 @mixin container {
   display: flex;
   flex-flow: column;
@@ -94,27 +100,27 @@
 }
 
 @mixin margin {
-  margin-left: -$margin--tv;
-  margin-right: -$margin--tv;
+  margin-left: -$padding--tv;
+  margin-right: -$padding--tv;
 
   @include desktop {
-    margin-left: -$margin--desktop;
-    margin-right: -$margin--desktop;
+    padding-left: -$padding--desktop;
+    padding-right: -$padding--desktop;
   }
 
   @include notebook {
-    margin-left: -$margin--notebook;
-    margin-right: -$margin--notebook;
+    padding-left: -$padding--notebook;
+    padding-right: -$padding--notebook;
   }
 
   @include tablet {
-    margin-left: -$margin--tablet;
-    margin-right: -$margin--tablet;
+    padding-left: -$padding--tablet;
+    padding-right: -$padding--tablet;
   }
 
   @include mobile {
-    margin-left: -$margin--mobile;
-    margin-right: -$margin--mobile;
+    padding-left: -$padding--mobile;
+    padding-right: -$padding--mobile;
   }
 }
 
@@ -158,16 +164,16 @@
 
   .level-svg circle {
     $value: var(--level, 0);
-    $radius: ($size - $stroke-width) / 2;
-    $perimeter: 2 * 3.1415926536 * $radius;
-    $perimeterPercentage: $perimeter / 100;
+    $radius: calc(($size - $stroke-width) / 2);
+    $perimeter: calc(2 * 3.1415926536 * $radius);
+    $perimeterPercentage: calc($perimeter / 100);
 
-    cx: #{$size / 2};
-    cy: #{$size / 2};
-    r: #{($size - $stroke-width) / 2};
+    cx: calc($size / 2);
+    cy: calc($size / 2);
+    r: calc(($size - $stroke-width) / 2);
     stroke-width: $stroke-width;
     stroke-linecap: $stroke-linecap;
-    stroke-dashoffset: #{2*3.1415926536*($size - $stroke-width)/2/4};
+    stroke-dashoffset: calc(2*3.1415926536*($size - $stroke-width)/2/4);
     stroke-dasharray: calc(#{$value} * #{$perimeterPercentage}) calc(#{$perimeter} - #{$value} * #{$perimeterPercentage});
   }
 }

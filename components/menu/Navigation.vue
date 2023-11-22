@@ -24,9 +24,29 @@ ul.menu-navigation
   padding: 0;
   display: flex;
   gap: 56px;
+
+  @include notebook {
+    gap: 48px;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .menu-navigation a {
   @include link;
+
+  font-size: 20px;
+  line-height: 24px;
+
+  @include notebook {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 </style>
