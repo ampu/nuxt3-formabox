@@ -1,11 +1,11 @@
 <template lang="pug">
-section.news
+section.news#news
   .news__header
     h2.news__title Новости
     a.news__more(href="#") Все новости
   ul.news__items
     li.news__item(
-      v-for="(item, index) in ITEMS"
+      v-for="(item, index) in NEWS"
       :key="index"
     )
       img.news__item-image(:src="item.image")
@@ -15,37 +15,7 @@ section.news
 </template>
 
 <script lang="ts" setup>
-import Source1 from '~/assets/images/news/1.png'
-import Source2 from '~/assets/images/news/2.png'
-import Source3 from '~/assets/images/news/3.png'
-
-type NewsItem = {
-  image: string
-  date: string
-  title: string
-  text: string
-}
-
-const ITEMS: NewsItem[] = [
-  {
-    image: Source1,
-    date: '2 августа 2022',
-    title: 'Официальное открытие',
-    text: 'Во Владимире открыли новое предприятие «Формабокс» по выпуску гофрокартона и гофро-продукции. В мероприятии приняли участие врио губернатора Владимирской области Александр Авдеев, глава города Владимира Андрей Шохин и генеральный директор предприятия Наталья Алексеева.',
-  },
-  {
-    image: Source2,
-    date: '21 мая 2022',
-    title: 'Запуск гильзонавивочной линии',
-    text: 'Шпуленавивное оборудование предназначено для производства картонной шпули (втулки, гильзы) способом спиралевидной навивки из полос бумаги/картона.',
-  },
-  {
-    image: Source3,
-    date: '5 апреля 2022',
-    title: 'Запуск автоматической фальцевально-склеивающей машины',
-    text: 'Фальцевально-склеивающая линия применяется для складывания и склейки прямоугольных картонных коробок в автоматическом режиме из заготовок. Может осуществлять склеивание картонных коробок и гофрокартонных коробов стандартного и сложного кроя, на 1 — 4 точек склейки.',
-  }
-]
+import {NEWS} from '~/utils/news'
 </script>
 
 <style lang="scss">
@@ -181,6 +151,8 @@ const ITEMS: NewsItem[] = [
   height: 300px;
   margin-bottom: 30px;
 
+  border-radius: 24px;
+
   @include desktop {
     width: 379px;
     height: 246px;
@@ -202,6 +174,8 @@ const ITEMS: NewsItem[] = [
     margin-bottom: 16px;
     width: 288px;
     height: 188px;
+
+    border-radius: 8px;
   }
 }
 

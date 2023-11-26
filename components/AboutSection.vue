@@ -1,5 +1,5 @@
 <template lang="pug">
-section.about
+section.about#about
   .about__container
     .about__left
       h2.about__title О компании

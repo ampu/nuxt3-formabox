@@ -1,5 +1,5 @@
 <template lang="pug">
-section.services
+section.services#services
   h2.services__title Услуги
   p.services__text Одним из основных видов деятельности нашего предприятия является производство гофрокартона разных марок и профилей
 

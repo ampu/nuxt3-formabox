@@ -1,17 +1,17 @@
 <template lang="pug">
 ul.menu-navigation
   li.menu-navigation__item
-    a(href="#") О&nbsp;нас
+    a(href="#about") О&nbsp;нас
   li.menu-navigation__item
-    a(href="#") Продукция
+    a(href="#products") Продукция
   li.menu-navigation__item
-    a(href="#") Услуги
+    a(href="#services") Услуги
   li.menu-navigation__item
-    a(href="#") Новости
+    a(href="#news") Новости
   li.menu-navigation__item
     a(href="#") Вакансии
   li.menu-navigation__item
-    a(href="#") Контакты
+    a(href="#footer") Контакты
 </template>
 
 <script lang="ts" setup>

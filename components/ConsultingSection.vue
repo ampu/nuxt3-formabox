@@ -1,5 +1,5 @@
 <template lang="pug">
-section.consulting
+section.consulting#consulting
   form.consulting__form(method="POST" action="https://httpbin.org/post")
     h2.consulting__title Консультация специалиста
     p.consulting__text Оставьте ваши контактные данные и мы свяжемся с Вами для уточнения Вашего интереса и вместе выберем удобное время для встречи

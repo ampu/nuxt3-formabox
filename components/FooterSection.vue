@@ -1,5 +1,5 @@
 <template lang="pug">
-.footer
+.footer#footer
   .footer__container
     Logo.footer__logo
     hr.footer__lline

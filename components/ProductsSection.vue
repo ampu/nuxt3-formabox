@@ -1,5 +1,5 @@
 <template lang="pug">
-.products
+.products#products
   h2.products__title Продукция
   p.products__text В ассортимент нашей продукции входят разные профили гофрокартона в зависимости от количества слоев
   ul.products__container

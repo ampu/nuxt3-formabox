@@ -1,23 +1,23 @@
 <template lang="pug">
 ul.footer-navigation
   li.footer-navigation__item
-    a(href="#") О&nbsp;нас
+    a(href="#about") О&nbsp;нас
   li.footer-navigation__item
-    a(href="#") Новости
+    a(href="#news") Новости
   li.footer-navigation__item.footer-navigation__item--secondary
-    a(href="#") Консультация
+    a(href="#consulting") Консультация
 
   li.footer-navigation__item
-    a(href="#") Продукция
+    a(href="#products") Продукция
   li.footer-navigation__item
     a(href="#") Вакансии
   li.footer-navigation__item.footer-navigation__item--secondary
     a(href="#") Связаться
 
   li.footer-navigation__item
-    a(href="#") Услуги
+    a(href="#services") Услуги
   li.footer-navigation__item
-    a(href="#") Контакты
+    a(href="#footer") Контакты
   li.footer-navigation__item.footer-navigation__item--secondary
     a(href="#") Оставить заявку
 </template>
