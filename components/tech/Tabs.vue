@@ -73,7 +73,7 @@ const props = defineProps<{
     background-size: cover;
 
     width: 917px;
-    background-image: url("~/assets/images/tech-item-1.png");
+    background-image: url("~/assets/images/tech-item-1.jpg");
 
     @include desktop {
       width: 719px;
@@ -86,7 +86,7 @@ const props = defineProps<{
     @include tablet {
       width: 100%;
       height: 347px;
-      background-image: url("~/assets/images/tech-item-1--tablet.png");
+      background-image: url("~/assets/images/tech-item-1.jpg");
 
       border-radius: 24px 24px 0 0;
     }
@@ -94,7 +94,7 @@ const props = defineProps<{
     @include mobile {
       width: 100%;
       height: 200px;
-      background-image: url("~/assets/images/tech-item-1--tablet.png");
+      background-image: url("~/assets/images/tech-item-1.jpg");
 
       border-radius: 24px 24px 0 0;
     }
