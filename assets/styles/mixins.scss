@@ -99,31 +99,6 @@
   }
 }
 
-@mixin margin {
-  margin-left: -$padding--tv;
-  margin-right: -$padding--tv;
-
-  @include desktop {
-    padding-left: -$padding--desktop;
-    padding-right: -$padding--desktop;
-  }
-
-  @include notebook {
-    padding-left: -$padding--notebook;
-    padding-right: -$padding--notebook;
-  }
-
-  @include tablet {
-    padding-left: -$padding--tablet;
-    padding-right: -$padding--tablet;
-  }
-
-  @include mobile {
-    padding-left: -$padding--mobile;
-    padding-right: -$padding--mobile;
-  }
-}
-
 @mixin right {
   right: $padding--tv;
 
