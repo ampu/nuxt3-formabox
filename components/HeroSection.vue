@@ -3,7 +3,7 @@
   .hero__container
     h1.visually-hidden Формабокс - держите ваш бизнес в форме
 
-    Swiper.hero__slider(v-bind="SWIPER_SETTINGS")
+    Swiper.hero__slider(v-bind="SWIPER_OPTIONS")
       SwiperSlide.hero__slide.hero__slide--first
         .hero__slide-container
           strong.hero__title.hero__title--first Держите ваш бизнес в&nbsp;форме
@@ -52,17 +52,24 @@ import MoreIcon from '~/assets/icons/more.svg?component'
 import BackwardIcon from '~/assets/icons/backward.svg?component'
 import ForwardIcon from '~/assets/icons/forward.svg?component'
 import type Swiper from 'swiper'
+import type {SwiperOptions} from 'swiper/types/swiper-options'
 
 let swiper: Swiper
 const currentSlide = ref(0)
 
-const SWIPER_SETTINGS = {
+const SWIPER_OPTIONS: SwiperOptions = {
+  modules: [SwiperAutoplay],
   loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: true,
+    pauseOnMouseEnter: true,
+  },
   onInit(instance: Swiper) {
     swiper = instance
   },
-  onActiveIndexChange() {
-    currentSlide.value = swiper?.activeIndex ?? 0
+  onSlideChange() {
+    currentSlide.value = swiper?.realIndex ?? 0
   },
 }
 
@@ -241,7 +248,7 @@ const onNext = () => {
   }
 
   &--next {
-    --level: 33.3;
+    --slide: v-bind(currentSlide);
   }
 
   @include level(64px, 3px);

@@ -1,17 +1,10 @@
 <template lang="pug">
 ul.menu-navigation
-  li.menu-navigation__item
-    a(href="#about") О&nbsp;нас
-  li.menu-navigation__item
-    a(href="#products") Продукция
-  li.menu-navigation__item
-    a(href="#services") Услуги
-  li.menu-navigation__item
-    a(href="#news") Новости
-  li.menu-navigation__item
-    a(href="#") Вакансии
-  li.menu-navigation__item
-    a(href="#footer") Контакты
+  li.menu-navigation__item(
+    v-for="(item, index) in HEADER_NAVIGATION"
+    :key="index"
+  )
+    a(:href="item.href" v-html="item.title")
 </template>
 
 <script lang="ts" setup>

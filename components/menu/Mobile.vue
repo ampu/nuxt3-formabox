@@ -1,5 +1,5 @@
 <template lang="pug">
-.menu-mobile(v-if="uiStore.isMobileMenuOpen")
+.menu-mobile(v-if="uiStore.isMobileMenuOpen" @click="onClick")
   .menu-mobile__container
     Logo.menu-mobile__logo
 
@@ -8,22 +8,14 @@
       TimesIcon
 
     .menu-mobile__search
-      SearchIcon
-      input(type="search" name="search")
+      SearchIcon.menu-mobile__search-svg
+      input.menu-mobile__search-input(type="search" name="search" placeholder="Поиск")
 
     ul.menu-mobile__navigation
-      li.menu-mobile__navigation-item
-        a(href="#") О&nbsp;нас
-      li.menu-mobile__navigation-item
-        a(href="#") Продукция
-      li.menu-mobile__navigation-item
-        a(href="#") Услуги
-      li.menu-mobile__navigation-item
-        a(href="#") Новости
-      li.menu-mobile__navigation-item
-        a(href="#") Вакансии
-      li.menu-mobile__navigation-item
-        a(href="#") Контакты
+      li.menu-mobile__navigation-item(
+        v-for="(item, index) in HEADER_NAVIGATION"
+      )
+        a(:href="item.href" v-html="item.title")
 
     .menu-mobile__message
       MessageIcon
@@ -33,19 +25,19 @@
 
     ul.menu-mobile__socials
       li.menu-mobile__socials-item
-        a(href="#")
+        a(href="https://vk.com" target="_blank")
           VkIcon
           .visually-hidden Вконтакте
       li.menu-mobile__socials-item
-        a(href="#")
+        a(href="https://ok.ru" target="_blank")
           OkIcon
           .visually-hidden Одноклассники
       li.menu-mobile__socials-item
-        a(href="#")
+        a(href="https://telegram.org" target="_blank")
           TgIcon
           .visually-hidden Telegram
       li.menu-mobile__socials-item
-        a(href="#")
+        a(href="https://youtube.com" target="_blank")
           YtIcon
           .visually-hidden YouTube`
 </template>
@@ -60,6 +52,13 @@ import SearchIcon from '~/assets/icons/search.svg?component'
 import MessageIcon from '~/assets/icons/message.svg?component'
 
 const uiStore = useUiStore()
+
+const onClick = (evt: Event) => {
+  const target = evt.target as HTMLLinkElement
+  if (target.tagName === `A`) {
+    uiStore.isMobileMenuOpen = false
+  }
+}
 </script>
 
 <style lang="scss">
@@ -168,14 +167,14 @@ const uiStore = useUiStore()
   margin-bottom: 16px;
 }
 
-.menu-mobile__search svg {
+.menu-mobile__search-svg {
   position: absolute;
   left: 14px;
 
   color: $gray;
 }
 
-.menu-mobile__search input {
+.menu-mobile__search-input {
   display: flex;
   width: 100%;
   padding: 8px;

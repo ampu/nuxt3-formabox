@@ -1,14 +1,16 @@
 <template lang="pug">
 section.tech
   .tech__container
-    img.tech__icon(src="~/assets/images/tech-icon.png" width="146" height="135")
-    h2.tech__title Технологии и производство
-    p.tech__text Для оперативного выполнения заказов любого масштаба мы располагаем двумя гофроагрегаторами. Производственная линия оснащена новейшим оборудованием Cangzhou Zhenxing Packaging&nbsp;Machinery&nbsp;Co
+    .tech__header
+      img.tech__icon(src="~/assets/images/tech-icon.png" width="146" height="135")
+      h2.tech__title Технологии и производство
+      p.tech__text Для оперативного выполнения заказов любого масштаба мы располагаем двумя гофроагрегаторами. Производственная линия оснащена новейшим оборудованием Cangzhou Zhenxing Packaging&nbsp;Machinery&nbsp;Co
 
   TechControls(v-model:activeIndex="activeIndex")
-  TechTabs(v-model:activeIndex="activeIndex")
 
-  TechPoints
+  .tech__container
+    TechTabs(v-model:activeIndex="activeIndex")
+    TechPoints
 </template>
 
 <script lang="ts" setup>
@@ -17,8 +19,6 @@ const activeIndex = ref(0)
 
 <style lang="scss">
 .tech {
-  @include container;
-  @include padding;
   margin-top: 130px;
 
   @include desktop {
@@ -39,6 +39,11 @@ const activeIndex = ref(0)
 }
 
 .tech__container {
+  @include container;
+  @include padding;
+}
+
+.tech__header {
   display: grid;
   align-items: center;
   grid-template-areas:

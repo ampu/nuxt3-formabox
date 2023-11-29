@@ -1,25 +1,11 @@
 <template lang="pug">
 ul.footer-navigation
-  li.footer-navigation__item
-    a(href="#about") О&nbsp;нас
-  li.footer-navigation__item
-    a(href="#news") Новости
-  li.footer-navigation__item.footer-navigation__item--secondary
-    a(href="#consulting") Консультация
-
-  li.footer-navigation__item
-    a(href="#products") Продукция
-  li.footer-navigation__item
-    a(href="#") Вакансии
-  li.footer-navigation__item.footer-navigation__item--secondary
-    a(href="#") Связаться
-
-  li.footer-navigation__item
-    a(href="#services") Услуги
-  li.footer-navigation__item
-    a(href="#footer") Контакты
-  li.footer-navigation__item.footer-navigation__item--secondary
-    a(href="#") Оставить заявку
+  li.footer-navigation__item(
+    v-for="(item, index) in FOOTER_NAVIGATION"
+    :key="index"
+    :class="{'footer-navigation__item--secondary': item.isSecondary}"
+  )
+    a(:href="item.href" v-html="item.title")
 </template>
 
 <script lang="ts" setup>

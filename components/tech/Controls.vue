@@ -1,15 +1,17 @@
 <template lang="pug">
-ul.tech-controls
-  li.tech-controls__item(
-    v-for="(tech, techIndex) in TECHNOLOGIES"
-    :key="techIndex"
-  )
-    button.tech-controls__button(
-      type="button"
-      :class="{active: techIndex === activeIndex}"
-      v-text="tech.tab"
-      @click="emit('update:activeIndex', techIndex)"
-    )
+.tech-controls
+  .tech-controls__container
+    ul.tech-controls__inner
+      li.tech-controls__item(
+        v-for="(tech, techIndex) in TECHNOLOGIES"
+        :key="techIndex"
+      )
+        button.tech-controls__button(
+          type="button"
+          :class="{active: techIndex === activeIndex}"
+          v-text="tech.tab"
+          @click="emit('update:activeIndex', techIndex)"
+        )
 </template>
 
 <script lang="ts" setup>
@@ -26,14 +28,11 @@ const emit = defineEmits<{
 
 <style lang="scss">
 .tech-controls {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
   overflow: auto;
   margin-bottom: 24px;
 
   scrollbar-width: none;
+
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
@@ -42,6 +41,18 @@ const emit = defineEmits<{
   @include notebook {
     margin-bottom: 34px;
   }
+}
+
+.tech-controls__container {
+  @include container;
+  @include padding;
+}
+
+.tech-controls__inner {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .tech-controls__button {
