@@ -8,10 +8,11 @@ section.news#news
       v-for="(item, index) in NEWS"
       :key="index"
     )
-      img.news__item-image(:src="item.image")
-      span.news__item-date(v-text="item.date")
-      h3.news__item-title(v-text="item.title")
-      p.news__item-text(v-text="item.text")
+      a.news__item-container(href="#")
+        img.news__item-image(:src="item.image")
+        span.news__item-date(v-text="item.date")
+        h3.news__item-title(v-text="item.title")
+        p.news__item-text(v-text="item.text")
 </template>
 
 <script lang="ts" setup>
@@ -142,6 +143,12 @@ import {NEWS} from '~/utils/news'
       auto
       1fr;
   }
+}
+
+.news__item-container {
+  text-decoration: none;
+
+  color: inherit;
 }
 
 .news__item-image {

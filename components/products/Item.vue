@@ -1,9 +1,9 @@
 <template lang="pug">
 li.products-item
-  .products-item__container
+  a.products-item__container(href="#")
     h3.products-item__title(v-text="title")
     p.products-item__text(v-for="line in text" v-text="line")
-    a.products-item__link(href="#")
+    p.products-item__link
       span.visually-hidden Подробнее
       ArrowRight
 </template>
@@ -110,6 +110,10 @@ const mobileTop = computed(() => `${props.images.mobile.top}px`)
   flex-flow: column;
   padding: 32px;
   height: 100%;
+
+  text-decoration: none;
+
+  color: inherit;
 
   @include mobile {
     padding: 20px;
